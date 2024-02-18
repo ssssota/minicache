@@ -10,10 +10,11 @@ inputs:
 runs:
   using: composite
   steps:
+    - uses: pnpm/action-setup@v2
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
         cache: pnpm
-    - run: corepack enable
-    - run: pnpm install
+    - run: corepack enable && pnpm install
+      shell: bash
