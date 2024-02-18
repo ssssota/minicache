@@ -1,6 +1,6 @@
 {
 	"name": "minicache",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "",
 	"main": "dist/index.js",
 	"type": "module",
@@ -12,7 +12,9 @@
 		"changeset": "changeset",
 		"release": "pnpm build && pnpm changeset publish"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -31,7 +33,9 @@
 		"type": "git",
 		"url": "git+https://github.com/ssssota/minicache.git"
 	},
-	"keywords": ["cache"],
+	"keywords": [
+		"cache"
+	],
 	"author": "TOMIKAWA Sotaro <tommysouta@gmail.com>",
 	"license": "MIT",
 	"bugs": {
