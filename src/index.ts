@@ -75,15 +75,17 @@ export const createCache = <Compat, Store extends CacheStore<Compat>>(
 
 export const createStorageStore = (
 	storage: Storage,
+	options: { keyPrefix?: string } = {},
 ): CacheStore<DevalueValue> => {
+	const { keyPrefix = "" } = options;
 	return {
 		get<T extends DevalueValue>(key: string): PromiseOr<ValueExists<T>> {
-			const value = storage.getItem(key);
+			const value = storage.getItem(`${keyPrefix}${key}`);
 			if (value) return { exists: true, value: parse(value) };
 			return { exists: false };
 		},
 		set<T extends DevalueValue>(key: string, value: T) {
-			storage.setItem(key, stringify(value));
+			storage.setItem(`${keyPrefix}${key}`, stringify(value));
 		},
 		clear() {
 			storage.clear();
