@@ -26,13 +26,13 @@ importers:
         version: 20.11.28
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(typescript@5.4.2)
+        version: 8.0.2(postcss@8.4.35)(typescript@5.4.2)
       typescript:
         specifier: ^5.3.3
         version: 5.4.2
       vite-plugin-doctest:
-        specifier: ^0.1.2
-        version: 0.1.3(@types/node@20.11.28)(vitest@1.3.1)
+        specifier: ^1.0.0
+        version: 1.0.0(@types/node@20.11.28)(vitest@1.3.1(@types/node@20.11.28))
       vitest:
         specifier: ^1.3.0
         version: 1.3.1(@types/node@20.11.28)
@@ -1142,6 +1142,7 @@ packages:
   lilconfig@3.1.0:
     resolution: {integrity: sha512-p3cz0JV5vw/XeouBU3Ldnp+ZkBjE+n8ydJ4mcwBrOiXXPqNlrzGBqWs9X4MWF7f+iKUBu794Y8Hh8yawiJbCjw==}
     engines: {node: '>=14'}
+    deprecated: This version contains a security issue. Please upgrade to 3.1.1 or later.
 
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
@@ -1800,8 +1801,8 @@ packages:
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
-  vite-plugin-doctest@0.1.3:
-    resolution: {integrity: sha512-2n2zetE7baytXgH9FTwHyU3mbxarawf0KCL/1gSo64SGgud9CVQJ+otfQkVhTIAsj4C0husJ2ir7DxCf0VuC2w==}
+  vite-plugin-doctest@1.0.0:
+    resolution: {integrity: sha512-qGuup/VOwNgT29ljS5BO/UDDUOQj6jRVoFNs82+m6iofijrIxjstXWllfcUCVwk4x26r0JjqFVGeqgyrU9vTbg==}
     peerDependencies:
       vitest: '>=0.29.0'
 
@@ -3365,10 +3366,12 @@ snapshots:
       mlly: 1.6.1
       pathe: 1.1.2
 
-  postcss-load-config@4.0.2:
+  postcss-load-config@4.0.2(postcss@8.4.35):
     dependencies:
       lilconfig: 3.1.0
       yaml: 2.3.4
+    optionalDependencies:
+      postcss: 8.4.35
 
   postcss@8.4.35:
     dependencies:
@@ -3712,7 +3715,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsup@8.0.2(typescript@5.4.2):
+  tsup@8.0.2(postcss@8.4.35)(typescript@5.4.2):
     dependencies:
       bundle-require: 4.0.2(esbuild@0.19.12)
       cac: 6.7.14
@@ -3722,12 +3725,14 @@ snapshots:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      postcss-load-config: 4.0.2
+      postcss-load-config: 4.0.2(postcss@8.4.35)
       resolve-from: 5.0.0
       rollup: 4.12.0
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tree-kill: 1.2.2
+    optionalDependencies:
+      postcss: 8.4.35
       typescript: 5.4.2
     transitivePeerDependencies:
       - supports-color
@@ -3816,7 +3821,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-doctest@0.1.3(@types/node@20.11.28)(vitest@1.3.1):
+  vite-plugin-doctest@1.0.0(@types/node@20.11.28)(vitest@1.3.1(@types/node@20.11.28)):
     dependencies:
       magic-string: 0.30.8
       typescript: 5.4.2
@@ -3833,25 +3838,24 @@ snapshots:
 
   vite@5.1.4(@types/node@20.11.28):
     dependencies:
-      '@types/node': 20.11.28
       esbuild: 0.19.12
       postcss: 8.4.35
       rollup: 4.12.1
     optionalDependencies:
+      '@types/node': 20.11.28
       fsevents: 2.3.3
 
   vite@5.1.5(@types/node@20.11.28):
     dependencies:
-      '@types/node': 20.11.28
       esbuild: 0.19.12
       postcss: 8.4.35
       rollup: 4.12.1
     optionalDependencies:
+      '@types/node': 20.11.28
       fsevents: 2.3.3
 
   vitest@1.3.1(@types/node@20.11.28):
     dependencies:
-      '@types/node': 20.11.28
       '@vitest/expect': 1.3.1
       '@vitest/runner': 1.3.1
       '@vitest/snapshot': 1.3.1
@@ -3872,6 +3876,8 @@ snapshots:
       vite: 5.1.4(@types/node@20.11.28)
       vite-node: 1.3.1(@types/node@20.11.28)
       why-is-node-running: 2.2.2
+    optionalDependencies:
+      '@types/node': 20.11.28
     transitivePeerDependencies:
       - less
       - lightningcss
