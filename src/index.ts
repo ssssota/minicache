@@ -6,8 +6,8 @@ import type { Cache, CacheStore, PromiseOr, ValueExists } from "./types.js";
  * create a cache control object
  * @param store store to use for caching backend
  * @returns cache control object
- * @import.meta.vitest
- * ```js
+ * @example
+ * ```js @import.meta.vitest
  * const cache = createCache(createMemoryStore());
  * const { value } = cache.with(["key"], async () => "value");
  * expect(await value).toBe("value");
