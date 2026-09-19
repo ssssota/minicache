@@ -39,7 +39,7 @@
 	},
 	"homepage": "https://github.com/ssssota/minicache#readme",
 	"dependencies": {
-		"devalue": "^4.3.2"
+		"devalue": "^5.0.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.5.3",
